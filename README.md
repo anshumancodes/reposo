@@ -1,103 +1,86 @@
 # reposo
 
-A CLI for scaffolding a full-stack TypeScript monorepo.
-
-reposo sets up a clean monorepo with separate applications and shared packages. During setup, you can choose the package manager you want to use.
-
-## Features
-
-- Full-stack TypeScript monorepo
-- Web and API applications
-- Shared UI package
-- Shared common package
-- Shared TypeScript configuration
-- npm or pnpm
-- Interactive project setup
-
-## Structure
-
-```text
-my-app/
-├── apps/
-│   ├── web/
-│   └── api/
-├── packages/
-│   ├── typescript-config/
-│   ├── ui/
-│   └── common/
-├── package.json
-└── lockfile
-```
-
-### Apps
-
-- `web` - Frontend application
-- `api` - Backend application
-
-### Packages
-
-- `typescript-config` - Shared TypeScript configurations
-- `ui` - Shared UI components
-- `common` - Shared utilities and code
+A lightweight CLI for scaffolding a full-stack TypeScript monorepo with sensible defaults.
 
 ## Usage
-
-Create a new repository:
 
 ```bash
 npx reposo my-app
 ```
 
-Or run the CLI interactively:
+Or with a specific package manager:
 
 ```bash
-npx reposo
+npx reposo my-app -p npm
 ```
 
-reposo will prompt you to configure the project, including your preferred package manager:
+## Generated structure
 
 ```text
-Project name: my-app
-
-Choose a package manager:
-> npm
-  pnpm
+my-app/
+├── apps/
+│   ├── web/          — Next.js / Vite / plain TS
+│   └── api/          — Express / Fastify / Hono / plain TS
+├── packages/
+│   ├── ts-config/    — Shared TypeScript base config
+│   ├── eslint-config/— Shared ESLint flat config
+│   ├── ui/           — Shared UI components
+│   └── common/       — Shared utilities
+├── .env.example
+├── .gitignore
+├── package.json
+└── README.md
 ```
 
-After setup:
+## Options
+
+```text
+Usage:
+  reposo <project-name> [options]
+
+Options:
+  -y, --yes                     Skip prompts and use sensible defaults
+  -p, --package-manager <name>  Package manager to use (npm | pnpm)  [default: pnpm]
+  -t, --template <name>         Template to use (fullstack)          [default: fullstack]
+      --no-install              Skip dependency installation
+      --no-git                  Skip git initialization
+  -h, --help                    Show this help message
+  -v, --version                 Print the version number
+```
+
+### Defaults (used with `--yes`)
+
+| Option          | Default  |
+|-----------------|----------|
+| Package manager | `pnpm`   |
+| Web framework   | Next.js  |
+| API framework   | Express  |
+| Install deps    | yes      |
+| Init git        | yes      |
+
+## Interactive setup
+
+Running `reposo my-app` prompts you to configure:
+
+- Package manager (`npm` or `pnpm`)
+- Web framework (`Next.js`, `Vite`, or `None`)
+- API framework (`Express`, `Fastify`, `Hono`, or `None`)
+- Whether to install dependencies
+- Whether to initialize git
+
+## Non-interactive
 
 ```bash
-cd my-app
+reposo my-app --yes
 ```
 
-reposo will generate the appropriate lockfile and workspace configuration for the selected package manager.
+Uses all defaults above without prompting.
 
-## Package Managers
+## Workspace protocols
 
-reposo currently supports:
-
-- npm
-- pnpm
-
-More package managers may be supported in the future.
-
-## Development
-
-The generated project uses workspaces to manage applications and shared packages in a single repository.
-
-You can add new applications under `apps/` and shared packages under `packages/` as your project grows.
-
-## Contributing
-
-Contributions are welcome.
-
-1. Fork the repository
-2. Create a branch for your changes
-3. Make your changes
-4. Open a pull request
-
-For larger changes, consider opening an issue first to discuss the proposal.
+- **pnpm**: uses `workspace:*` for cross-package references
+- **npm**: uses `*` for cross-package references, with a root `workspaces` field in `package.json`
 
 ## License
 
-reposo is licensed under the GNU Affero General Public License v3.0. See the [LICENSE](./LICENSE) file for details.
+AGPL-3.0-only — see [LICENSE](./LICENSE).
