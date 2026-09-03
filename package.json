@@ -1,10 +1,18 @@
 {
   "name": "openrepo",
   "version": "1.0.0",
-  "description": "A simple CLI to quickly scaffold a modern full-stack TypeScript monorepo with web, API, UI, common utilities, and shared TypeScript configuration.",
+  "description": "A CLI for scaffolding a full-stack TypeScript monorepo with support for npm and pnpm.",
   "keywords": [
     "monorepo",
-    "cli"
+    "cli",
+    "scaffolding",
+    "typescript",
+    "fullstack",
+    "workspace",
+    "npm",
+    "pnpm",
+    "project-generator",
+    "developer-tools"
   ],
   "repository": {
     "type": "git",
