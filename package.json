@@ -1,7 +1,7 @@
 {
   "name": "reposo",
-  "version": "1.0.1",
-  "description": "A CLI for scaffolding a full-stack TypeScript monorepo with support for npm and pnpm.",
+  "version": "1.1.0",
+  "description": "A CLI for scaffolding a full-stack TypeScript monorepo with sensible defaults.",
   "keywords": [
     "monorepo",
     "cli",
@@ -25,10 +25,15 @@
   "bin": {
     "reposo": "src/index.js"
   },
+  "files": [
+    "src/"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "chalk": "^6.0.0"
+    "chalk": "^6.0.0",
+    "minimist": "^1.2.8",
+    "prompts": "^2.4.2"
   }
 }
