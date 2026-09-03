@@ -1,0 +1,52 @@
+# Development
+.git/
+.github/
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Tests
+coverage/
+test/
+tests/
+__tests__/
+
+# Local files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+.tmp/
+.temp/
+
+# Build/cache
+dist/
+build/
+.next/
+.turbo/
+.cache/
+
+# Development configs
+docker-compose.yml
+docker-compose.yaml
+
+# Package manager files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Source control
+.gitignore
+.gitattributes
