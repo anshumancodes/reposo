@@ -1,8 +1,8 @@
-# OpenRepo
+# reposo
 
 A CLI for scaffolding a full-stack TypeScript monorepo.
 
-OpenRepo sets up a clean monorepo with separate applications and shared packages. During setup, you can choose the package manager you want to use.
+reposo sets up a clean monorepo with separate applications and shared packages. During setup, you can choose the package manager you want to use.
 
 ## Features
 
@@ -45,16 +45,16 @@ my-app/
 Create a new repository:
 
 ```bash
-npx openrepo my-app
+npx reposo my-app
 ```
 
 Or run the CLI interactively:
 
 ```bash
-npx openrepo
+npx reposo
 ```
 
-OpenRepo will prompt you to configure the project, including your preferred package manager:
+reposo will prompt you to configure the project, including your preferred package manager:
 
 ```text
 Project name: my-app
@@ -70,11 +70,11 @@ After setup:
 cd my-app
 ```
 
-OpenRepo will generate the appropriate lockfile and workspace configuration for the selected package manager.
+reposo will generate the appropriate lockfile and workspace configuration for the selected package manager.
 
 ## Package Managers
 
-OpenRepo currently supports:
+reposo currently supports:
 
 - npm
 - pnpm
@@ -100,4 +100,4 @@ For larger changes, consider opening an issue first to discuss the proposal.
 
 ## License
 
-OpenRepo is licensed under the GNU Affero General Public License v3.0. See the [LICENSE](./LICENSE) file for details.
+reposo is licensed under the GNU Affero General Public License v3.0. See the [LICENSE](./LICENSE) file for details.
