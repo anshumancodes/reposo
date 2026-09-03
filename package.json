@@ -22,6 +22,9 @@
   "author": "anshumancodes",
   "type": "module",
   "main": "src/index.js",
+  "bin": {
+    "openrepo": "src/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
