@@ -1,0 +1,20 @@
+{
+  "name": "openrepo",
+  "version": "1.0.0",
+  "description": "A simple CLI to quickly scaffold a modern full-stack TypeScript monorepo with web, API, UI, common utilities, and shared TypeScript configuration.",
+  "keywords": [
+    "monorepo",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anshumancodes/openrepo.git"
+  },
+  "license": "AGPL-3.0-only",
+  "author": "anshumancodes",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
